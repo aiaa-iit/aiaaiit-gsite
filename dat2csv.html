@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<head>
+    <title>DAT to CSV</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <?php $page = 'DAT to CSV'; ?>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/dat2csv.css">
+
+    <script async id="ics" crossorigin="anonymous" src="https://kit.fontawesome.com/b287813185.js"></script>
+
+    <script>
+        function fillcontent(parent){
+            var output = document.getElementById("out");
+            var icons = document.getElementsByClassName("icons")[0];
+            //icons.style = output.clientHeight < output.scrollHeight ? "right: 17px;" : "right: 33px;";
+        }
+    </script>
+    <script async type="text/javascript" src="js/main.js"></script>
+
+    <script async>
+        function commas() {
+            var output = document.getElementById("out");
+            var input = document.getElementById("in").value;
+            var two = document.getElementsByName("type")[0].checked;
+
+            output.value = '';
+
+            if (input != "") {
+                input = input.split('\n');
+                for (var i = 0; i < input.length; i++) {
+                    var parts = input[i].split(/ +/);
+                    if (parts.length > 2) {
+                        parts = parts.splice(1);
+                    }
+                    var str = parts[0] + ',' + parts[1];
+                    output.value += two ? str : str + ',0';
+                    if (i != input.length - 1) {output.value += '\n';}
+                }
+            }
+
+            var icons = document.getElementsByClassName("icons")[0];
+            icons.style = output.clientHeight < output.scrollHeight ? "right: 33px;" : "right: 17px;";
+        }
+
+        function copy() {
+            var output = document.getElementById("out");
+            output.focus();
+            output.select();
+            document.execCommand("copy");
+        }
+
+        function save() {
+            var content = encodeURI("data:text/csv;charset=utf-8," + document.getElementById("out").value);
+            var link = document.createElement("a");
+            link.setAttribute("href", content);
+            link.setAttribute("download", "airfoil.csv");
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+        }
+    </script>
+</head>
+<style>
+    .wrap {
+    width: 100%;
+    height: 425px;
+}
+
+.inout {
+    width: 40%;
+    text-align: center;
+}
+
+.in {
+    float: left;
+}
+
+.out {
+    position: relative;
+    float: right;
+}
+
+.inout textarea {
+    width: 100%;
+    height: 400px;
+    border: 2px solid gray;
+    resize: none;
+}
+
+.btn {
+    overflow: hidden;
+    text-align: center;
+}
+
+.btn a {
+    display: block;
+    margin: 75px 25px 50px 25px;
+    padding: 25px;
+    color: white;
+    background-color: #DA0016;
+    cursor: pointer;
+}
+
+.btn a:hover {
+    background-color: #5f0b0bfa;
+}
+
+.opt {
+    text-align: left;
+}
+
+.radio {
+    margin: 0 0 0 20%;
+    padding: 5px 10px;
+}
+
+.icons {
+    position: absolute;
+    top: 22px;
+    right: 2px;
+    font-size: 1.25em;
+    background-color: rgb(255, 255, 255);
+    color: rgb(240, 12, 12);
+    border-radius: 0 0 0 10px;
+    padding: 5px 8px;
+}
+
+.icons a {
+    padding: 0 3px;
+    cursor: pointer;
+}
+
+.info {
+    width: 100%;
+    margin: 10px 5px;
+}
+
+@media only screen and (max-width: 768px) {
+    .wrap {
+        display: table;
+    }
+
+    .inout {
+        width: 100%;
+        float: none;
+    }
+
+    .in {
+        display: table-header-group;
+    }
+    
+    .out {
+        display: table-footer-group;
+    }
+    
+    .btn {
+        display: table-row-group;
+    }
+    
+    .btn a {
+        display: inline-block;
+        margin: 15px 0;
+    }
+
+    .opt {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    
+    .radio {
+        margin: 0 25px;
+        padding-right: 0;
+        margin-right: 0;
+    }
+}
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:400&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:400&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito:700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    color:rgb(255, 255, 255);
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    overflow: auto;
+}
+
+a {
+    color: #164fc9;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #5e8eff;
+}
+
+.header {
+    width: 100%;
+    height: 80px;
+    position: relative;
+    background: #1965e0;
+    overflow: hidden;
+}
+
+.header h1 {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: "Nunito", sans-serif;
+}
+
+.topnav ul {
+    list-style-type: none;
+	margin: 0;
+	padding: 0;
+    background-color: #164fc9;
+    font-size: 0;
+}
+
+.topnav li {
+    display: inline-block;
+}
+
+.topnav li a.active {
+	background-color: #1a6bed;
+}
+
+.topnav li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 12px 16px 12px 8px;
+    text-decoration: none;
+    font-size: initial;
+}
+
+.topnav li a:hover, .dropdown:hover .dropbtn {
+    background-color: #5e8eff;
+}
+
+.dropdown {
+    display: inline-block;
+	position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #313131;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,.2);
+	z-index: 1000;
+}
+
+.topnav .dropdown-content a {
+    color: white;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+	width: 160px;
+	z-index: 1000;
+}
+
+.topnav .dropdown-content a:hover {
+	background-color: #757575;
+}
+
+.topnav .dropdown-content a.active {
+	background-color: #5a5a5a;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.topnav i {
+    display: inline-block;
+    width: 25px;
+    text-align: center;
+}
+
+.topnav .burger {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .topnav a:not(.active) {
+        display: none;
+    }
+
+    .topnav a.burger, .topnav.responsive a.burger{
+        float: right;
+        display: block;
+        padding: 10px;
+        height: 43.2px;
+        background-color: #164fc9;
+    }
+
+    .topnav a.burger:hover {
+        background-color: #5e8eff;
+    }
+
+    .topnav {
+        width: 100%;
+        position: relative;
+        background-color: #164fc9;
+        margin-bottom: 43.2px;
+        z-index: 1000;
+    }
+
+    .topnav ul {
+        width: 100%;
+        position: absolute;
+    }
+
+    .topnav li {
+        float: left;
+        width: 100%;
+    }
+
+    .topnav.responsive a.burger {
+        position: relative;
+    }
+
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+
+    .topnav li a.active {
+        background-color: #164fc9;
+    }
+
+    .topnav.responsive .dropdown:hover .dropdown-content {
+        position: relative;
+        display: block;
+        box-shadow: 0;
+    }
+
+    .topnav.responsive .dropdown-content a {
+        width: 100%;
+    }
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 5px 5px 2px rgba(0, 0, 0, .2);
+}
+
+.content {
+    width: 100%;
+    padding: 10px 0 280px 0;
+    z-index: 10;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    font-family: "Lato", sans-serif;
+    background: #1965e0;
+    color: white;
+    text-align: center;
+}
+
+.foot-wrap {
+    margin: 0;
+    height: 75px;
+}
+
+.foot-row {
+    margin: 5px 0;
+}
+
+.foot-row a {
+    text-decoration: none;
+    color:white;
+}
+
+.foot-row a:hover {
+    color: rgb(185, 185, 185);
+}
+
+.foot-row u {
+    text-decoration: none;
+    border-bottom: 1.5pt dashed;
+}
+
+.foot-row i {
+    width: 28px;
+    text-align: center;
+}
+
+.foot-img {
+    width: 100%;
+    margin: 10px auto;
+}
+
+.footer img {
+    height: 75px;
+    width: auto;
+}
+
+.notice-row {
+    margin: 0 15px;
+}
+
+.notice {
+    display: table;
+    background: #FF6156;
+    color: #FFF;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.notice i {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 1.5em;
+    padding: 5px;
+    width: 25px;
+}
+
+.notice p {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 5px;
+    text-align: left;
+}
+
+.notice a {
+    color: white;
+    text-decoration: underline dashed;
+}
+.notice a:hover {
+    color: gray;
+}
+
+[class*="col-"] {
+    float: left;
+    width: 100%;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+@media only screen and (min-width: 600px) {
+    .col-s-1 { width: 8.33%; }
+    .col-s-2 { width: 16.66%; }
+    .col-s-3 { width: 25%; }
+    .col-s-4 { width: 33.33%; }
+    .col-s-5 { width: 41.66%; }
+    .col-s-6 { width: 50%; }
+    .col-s-7 { width: 58.33%; }
+    .col-s-8 { width: 66.66%; }
+    .col-s-9 { width: 75%; }
+    .col-s-10 { width: 83.33%; }
+    .col-s-11 { width: 91.66%; }
+    .col-s-12 { width: 100%; }
+}
+
+@media only screen and (min-width: 768px) {
+    .col-1 { width: 8.33%; }
+    .col-2 { width: 16.66%; }
+    .col-3 { width: 25%; }
+    .col-4 { width: 33.33%; }
+    .col-5 { width: 41.66%; }
+    .col-6 { width: 50%; }
+    .col-7 { width: 58.33%; }
+    .col-8 { width: 66.66%; }
+    .col-9 { width: 75%; }
+    .col-10 { width: 83.33%; }
+    .col-11 { width: 91.66%; }
+    .col-12 { width: 100%; }
+    
+    .content {
+        padding: 10px 30px 60px 30px;
+    }
+
+    .notice-row {
+        margin: 0;
+    }
+
+    a.extra {
+        display: none;
+    }
+
+    .content {
+        padding-bottom: 110px;
+    }
+
+    .footer {
+        text-align: left;
+    }
+
+    .foot-wrap {
+        width: auto;
+        margin: 12.5px;
+    }
+
+    .foot-img {
+        float: right;
+        width: auto;
+        margin: 12.5px 2%;
+    }
+
+    .footer img {
+        float: right;
+        height: 75px;
+        width: auto;
+    }
+}
+
+#burger {
+    width: 24px;
+    height: 18.4px;
+    display: block;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+
+#burger span {
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background: white;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+}
+
+#burger span:nth-child(1) {
+    top: 0px;
+}
+
+#burger span:nth-child(2), #burger span:nth-child(3) {
+    top: 9px;
+}
+
+#burger span:nth-child(4) {
+    top: 18px;
+}
+
+#burger.open span:nth-child(1) {
+    top: 9px;
+    width: 0%;
+    left: 50%;
+}
+
+#burger.open span:nth-child(2) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+#burger.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+#burger.open span:nth-child(4) {
+    top: 9px;
+    width: 0%;
+    left: 50%;
+}
+</style>
+<body>
+    <?php include 'php/topnav.php' ?>
+    <div class="content" style="margin: 0 auto;">
+        <div class="wrap">
+            <div class="inout in">
+                Input
+                <textarea id="in"></textarea>
+            </div>
+            <div class="inout out">
+                Output
+                <textarea readonly id="out"></textarea>
+                <div class="icons">
+                    <a onclick="copy()"><i class="far fa-copy"></i></a>
+                    <a onclick="save()"><i class="far fa-save"></i></a>
+                </div>
+            </div>
+            <div class="btn">
+                <a onclick="commas()">
+                    Convert
+                </a>
+                <div class="opt">
+                    <div class="radio">
+                        <input type="radio" name="type" checked> X, Y
+                    </div>
+                    <div class="radio">
+                        <input type="radio" name="type"> X, Y, Z
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="info">
+            <p> This page allows you to take an airfoil .dat file and convert it into CSV format. This especially useful for getting airfoil coordinates ready for insertion into CAD. </p> 
+        </div>
+    </div>
+    <?php include 'php/footer.php' ?>
+</body>

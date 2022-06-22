@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- linking font awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        /* Whole html box designing */
+        html {
+            box-sizing: border-box;
+        }
+
+        #image {
+            display: inline;
+        }
+
+
+        /* Body width fixing */
+        body {
+            max-width: 100%
+        }
+
+        /* Box sizing depending on parent */
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Styling column */
+        .column {
+            float: left;
+            width: 25%;
+            margin-bottom: 10px;
+            padding: 5px 5px;
+        }
+
+
+        /* Column width change depends on screen size */
+        @media screen and (max-width: 670px) {
+            .column {
+                width: 100%;
+                text-align: none;
+            }
+        }
+
+        /* Card designing */
+        .card {
+            /* background-color: none */
+            border: 0px solid black;
+        }
+
+        .container {
+            padding: 0 2px;
+        }
+
+        /* Icon styling */
+        .fa {
+            margin: 10px;
+            font-size: 68px;
+
+        }
+
+        .fa:hover {
+            transform: rotateY(180deg);
+            transition: transform 0.8s;
+        }
+
+        .container::after,
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        /* Margining first member of team */
+        #gfg {
+            float: none;
+            margin: auto;
+        }
+
+        /* Individual Social Media Icons */
+
+        .fa-envelope {
+
+            color: #ada7a1;
+            font-size: 20px;
+        }
+
+        .fa-envelope:hover {
+            transform: scale(1.2);
+        }
+
+        .fa-linkedin {
+            color: #ada7a1;
+            font-size: 20px;
+        }
+
+        .fa-linkedin:hover {
+            transform: scale(1.2);
+        }
+
+        .fa-github {
+            color: #ada7a1;
+            font-size: 20px;
+        }
+
+        .fa-github:hover {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>Meet The Team Page</h1>
+        <hr>
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <i class="fa" style="font-size:68px;"> <img src="https://gdurl.com/h8em" width="120" height="120"
+                            alt="John" id="image"></img> </i>
+                    <div class="container">
+                        <h2>Testing Test</h2>
+
+
+                        <p>President <br style="margin:0">
+                            <a href="mailto:aiaa@iit.edu" target="_blank" rel="noopener noreferrer"
+                                class="fa fa-envelope"></a>
+                            <a href="https://www.linkedin.com/company/illinois-tech-aiaa-chapter" target="_blank"
+                                rel="noopener noreferrer" class="fa fa-linkedin"></a>
+                            <a href="https://github.com/aiaa-iit" target="_blank" rel="noopener noreferrer"
+                                class="fa fa-github"></a>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="column">
+                <div class="card">
+                    <i class="fa" style="font-size:68px;"> <img src="https://gdurl.com/h8em" width="120" height="120"
+                            alt="John" id="image"></img> </i>
+                    <div class="container">
+                        <h2>Testing Test</h2>
+
+
+                        <p>Vice President <br style="margin:0">
+                            <a href="mailto:aiaa@iit.edu" target="_blank" rel="noopener noreferrer"
+                                class="fa fa-envelope"></a>
+                            <a href="https://www.linkedin.com/company/illinois-tech-aiaa-chapter" target="_blank"
+                                rel="noopener noreferrer" class="fa fa-linkedin"></a>
+                            <a href="https://github.com/aiaa-iit" target="_blank" rel="noopener noreferrer"
+                                class="fa fa-github"></a>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <i class="fa" style="font-size:68px;"> <img
+                            src="https://lh5.googleusercontent.com/KjnW6BCcRLAVn4j_K-4H9yLgHoA_aIfJL4mkCtp5Peq3XoKQEnc7SFBYmZF4Ur_oC42VxdlSEXXa5t87eVQOWCA"
+                            width="120" height="120" alt="John" id="image"></img> </i>
+                    <div class="container">
+                        <h2>Testing Test</h2>
+
+
+                        <p>Trasurer <br style="margin:0">
+                            <a href="mailto:aiaa@iit.edu" target="_blank" rel="noopener noreferrer"
+                                class="fa fa-envelope"></a>
+                            <a href="https://www.linkedin.com/company/illinois-tech-aiaa-chapter" target="_blank"
+                                rel="noopener noreferrer" class="fa fa-linkedin"></a>
+                            <a href="https://github.com/aiaa-iit" target="_blank" rel="noopener noreferrer"
+                                class="fa fa-github"></a>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <i class="fa" style="font-size:18px;"> <img
+                            src="https://media-exp1.licdn.com/dms/image/C4D03AQGg8gVuxz5jqg/profile-displayphoto-shrink_100_100/0/1601505144290?e=1661385600&v=beta&t=n_85oMvKca21YvCdTd8usuLY6_vnw_embwLa86B0230"></img>
+                    </i>
+                </div>
+                <div class="container">
+                    <h2>Testing Test</h2>
+                    <center>
+                        <p>Event Coordinator <br style="margin:0">
+                            <a href="mailto:aiaa@iit.edu" target="_blank" rel="noopener noreferrer"
+                                class="fa fa-envelope"></a>
+                            <a href="https://www.linkedin.com/company/illinois-tech-aiaa-chapter" target="_blank"
+                                rel="noopener noreferrer" class="fa fa-linkedin"></a>
+                            <a href="https://github.com/aiaa-iit" target="_blank" rel="noopener noreferrer"
+                                class="fa fa-github"></a>
+
+                        </p>
+                    </center>
+                </div>
+
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <i class="fa" style="font-size:18px;"> <img
+                            src="https://media-exp1.licdn.com/dms/image/C4D03AQGg8gVuxz5jqg/profile-displayphoto-shrink_100_100/0/1601505144290?e=1661385600&v=beta&t=n_85oMvKca21YvCdTd8usuLY6_vnw_embwLa86B0230"></img>
+                    </i>
+                </div>
+                <div class="container">
+                    <h2>Testing Test</h2>
+                    <center>
+                        <p>Event Coordinator <br style="margin:0">
+                            <a href="mailto:eghebreiesus@hawk.iit.edu" target="_blank" rel="noopener noreferrer"
+                                class="fa fa-envelope"></a>
+                            <a href="https://www.linkedin.com/in/eyobg/" target="_blank"
+                                rel="noopener noreferrer" class="fa fa-linkedin"></a>
+                            <a href="https://github.com/eyobghiday" target="_blank" rel="noopener noreferrer"
+                                class="fa fa-github"></a>
+
+                        </p>
+                    </center>
+                </div>
+
+            </div>
+
+        </div>
+    </center>
+</body>
+
+</html>
