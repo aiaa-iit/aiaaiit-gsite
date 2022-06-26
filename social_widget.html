@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .blockquote {
+            padding: 60px 80px 40px;
+            position: relative;
+        }
+
+        .blockquote p {
+            font-family: "Utopia-italic";
+            font-size: 35px;
+            font-weight: 700px;
+            text-align: center;
+        }
+
+        blockquote p::before {
+            content: "\f095";
+            font-family: FontAwesome;
+            display: inline-block;
+            padding-right: 6px;
+            vertical-align: middle;
+            font-size: 180px;
+        }
+
+        .blockquote:before {
+            position: absolute;
+            font-family: 'FontAwesome';
+            top: 0;
+
+            content: "\f10d";
+            font-size: 200px;
+            color: rgba(0, 0, 0, 0.1);
+
+        }
+
+        .blockquote::after {
+            content: "";
+            top: 20px;
+            left: 50%;
+            margin-left: -100px;
+            position: absolute;
+            border-bottom: 3px solid #bf0024;
+            height: 3px;
+            width: 200px;
+        }
+
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic);
+
+        .otro-blockquote {
+            font-size: 1.4em;
+            width: 50%;
+            margin: 50px auto;
+            font-family: Century Gothic;
+            font-style: italic;
+            color: #ffffff;
+            padding: 1.2em 30px 1.2em 75px;
+            border-left: 8px solid #cccccc;
+            line-height: 1.6;
+            position: relative;
+            background: none;
+        }
+
+        .otro-blockquote::before {
+            font-family: Arial;
+            content: "\201C";
+            color: #cccccc;
+            font-size: 4em;
+            position: absolute;
+            left: 10px;
+            top: -10px;
+        }
+
+        .otro-blockquote::after {
+            content: '';
+        }
+
+        .otro-blockquote span {
+            display: block;
+            color: #cccccc;
+            font-style: normal;
+            font-weight: bold;
+            margin-top: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <blockquote class="otro-blockquote">
+        Give me a bottle of coke and 24 hours, I can do everything.
+        <span>Jason</span>
+    </blockquote>
+
+
+    <blockquote class="otro-blockquote">
+        Wait wait wait guys... let's think about this!
+        <span>Eyob</span>
+    </blockquote>
+    <blockquote class="otro-blockquote">
+        Just give me something for the pain and let me die.
+        <span>Chris</span>
+    </blockquote>
+    <blockquote class="otro-blockquote">
+        Fool me one time lie to me, fool me two time I hate you all the time.
+        <span>Unknown</span>
+    </blockquote>
+
+
+    
+
+
+</body>
+
+</html>

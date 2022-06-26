@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- linking font awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        /* Whole html box designing */
+        html {
+            box-sizing: border-box;
+        }
+
+        #image {
+            display: inline;
+        }
+
+        /* Body width fixing */
+        body {
+            max-width: 100%
+        }
+
+        /* Box sizing depending on parent */
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+            /* color: white; */
+
+        }
+
+        /* h2 {
+            color: white; 
+        } */
+
+        /* Styling column */
+        .column {
+            float: left;
+            width: 25%;
+            margin-bottom: 10px;
+            padding: 5px 5px;
+        }
+
+        .row {
+            float: center;
+            align-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 10px 10px;
+        }
+
+        /* Column width change depends on screen size */
+        @media screen and (max-width: 670px) {
+            .column {
+                width: 100%;
+                text-align: none;
+            }
+        }
+
+        /* Card designing */
+        /* .card {
+            background-color: #ada7a1;
+            border: 2px solid black;
+         } 
+        */
+
+        .container {
+            padding: 0 2px;
+        }
+
+        /* Icon styling */
+        .fa {
+            margin: 10px;
+            font-size: 68px;
+
+        }
+
+        .fa:hover {
+            transform: rotateY(180deg);
+            transition: transform 0.8s;
+            /* transform: scale(1.3); */
+        }
+
+        .container::after,
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        /* Margining first member of team */
+        #gfg {
+            float: none;
+            margin: auto;
+        }
+
+        /* Individual Social Media Icons */
+
+        .fa-envelope-square {
+
+            color: #ada7a1;
+            font-size: 30px;
+            /* display: inline-block;
+            border-radius: 50%;
+            box-shadow: 0 0 2px #ada7a1;
+            padding: 0.5em 0.5em; */
+        }
+
+        .fa-envelope-square:hover {
+            transform: scale(1.3);
+        }
+
+        .fa-linkedin-square {
+            color: #ada7a1;
+            font-size: 30px;
+        }
+
+        .fa-linkedin-square:hover {
+            transform: scale(1.3);
+        }
+
+        .fa-github-square {
+            color: #ada7a1;
+            font-size: 30px;
+        }
+
+        .fa-github-square:hover {
+            transform: scale(1.3);
+        }
+
+        .fa-external-link-square {
+            color: #ada7a1;
+            font-size: 30px;
+            
+        }
+
+        .fa-external-link-square:hover {
+            transform: scale(1.3);
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <hr>
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <i class="fa" style="font-size:18px;"> <img
+                            src="https://media-exp1.licdn.com/dms/image/C5603AQHqLYZv0rkLcA/profile-displayphoto-shrink_400_400/0/1596502807665?e=1661385600&v=beta&t=Yj2h2EXAP2XSrtEdiuHNJCIuQQgP6-OFd4sObQhB_MQ"></img>
+                    </i>
+                </div>
+                <div class="container">
+                    <h2>Mikel Woo</h2>
+                    <center>
+                        <p>Alumni Liaison<br style="margin:0">
+                            <a href="mailto:mwoo1@hawk.iit.edu" target="_blank" rel="noopener noreferrer"
+                                class="fa fa-envelope-square"></a>
+                            <a href="https://www.linkedin.com/in/mikel-woo" target="_blank" rel="noopener noreferrer"
+                                class="fa fa-linkedin-square"></a>
+                            <a href="https://github.com/aiaa-iit" target="_blank" rel="noopener noreferrer"
+                                class="fa fa-github-square"></a>
+
+                        </p>
+                    </center>
+                </div>
+
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <i class="fa" style="font-size:18px;"> <img
+                            src="https://media-exp1.licdn.com/dms/image/C4D03AQHvkFa10Y_xDA/profile-displayphoto-shrink_400_400/0/1633763310812?e=1661385600&v=beta&t=nDaYXFSGhoEiHFFekBWBQlDxUKik1W2gavSsMNi1axA"></img>
+                    </i>
+                </div>
+                <div class="container">
+                    <h2>Tim Kim</h2>
+                    <center>
+                        <p>Structural Engineer<br style="margin:0">
+                            <a href="mailto:tkim42@hawk.iit.edu" target="_blank" rel="noopener noreferrer"
+                                class="fa fa-envelope-square"></a>
+                            <a href="https://www.linkedin.com/in/kim-timothy" target="_blank" rel="noopener noreferrer"
+                                class="fa fa-linkedin-square"></a>
+                            <a href="https://kimtimothy.wixsite.com/timkim" target="_blank" rel="noopener noreferrer"
+                                class="fa fa-external-link-square"></a>
+
+                        </p>
+                    </center>
+                </div>
+
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <i class="fa" style="font-size:18px;"> <img
+                            src="https://media-exp1.licdn.com/dms/image/C5603AQHw_IpjqlttLA/profile-displayphoto-shrink_400_400/0/1652647896301?e=1661385600&v=beta&t=l37r8AgHENAykzRj4Siw9nTwWK9fG5vOMbmDVtX7zVM"></img>
+                    </i>
+                </div>
+                <div class="container">
+                    <h2>Hannah Snyderburn</h2>
+                    <center>
+                        <p>Hypersonics <br style="margin:0">
+                            <a href="mailto:hsnyderburn@hawk.iit.edu" target="_blank" rel="noopener noreferrer"
+                                class="fa fa-envelope-square"></a>
+                            <a href="https://www.linkedin.com/in/hannahsnyderburn" target="_blank"
+                                rel="noopener noreferrer" class="fa fa-linkedin-square"></a>
+                            <a href="https://github.com/hsnyderburn" target="_blank" rel="noopener noreferrer"
+                                class="fa fa-github-square"></a>
+
+                        </p>
+                    </center>
+                </div>
+
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <i class="fa" style="font-size:18px;"> <img
+                            src="https://ca.slack-edge.com/T75QTGLSG-U02CEB6H44V-3c47d593e937-512"></img>
+                    </i>
+                </div>
+                <div class="container">
+                    <h2>That Dude</h2>
+                    <center>
+                        <p>Magician's Assistant<br style="margin:0">
+                            <a href="mailto:@hawk.iit.edu" target="_blank" rel="noopener noreferrer"
+                                class="fa fa-envelope-square"></a>
+                            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer"
+                                class="fa fa-linkedin-square"></a>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="fa fa-github-square"></a>
+
+                        </p>
+                    </center>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="column">
+                <center>
+                    <div class="card">
+
+                        <i class="fa" style="font-size:18px;"> <img
+                                src="https://lh4.googleusercontent.com/RUIw2_yT5YceOcYUc2VSgzkgp7z-S7uXJSmLod1Z7VAnR1vygygusW6TZeEVefzvVdjcqxO5LsXCcEEYUtvbyu4H0IlqvZaA1y3vYTXgP77XHTuaYKapJvqYRhEEcpZf0PmkEoAjO1V6mieHIOo?alr=yes"></img>
+                        </i>
+                    </div>
+                    <div class="container">
+                        <h2>Jason Rigo</h2>
+                        <center>
+                            <p>Flight Test Engineer<br style="margin:0">
+                                <a href="mailto:jrigo@hawk.iit.edu" target="_blank" rel="noopener noreferrer"
+                                    class="fa fa-envelope-square"></a>
+                                <a href="https://www.linkedin.com/in/jason-rigo-a19553197" target="_blank"
+                                    rel="noopener noreferrer" class="fa fa-linkedin-square"></a>
+                                <a href="https://github.com/aiaa-iit" target="_blank" rel="noopener noreferrer"
+                                    class="fa fa-github-square"></a>
+                            </p>
+                        </center>
+                    </div>
+
+            </div>
+            <div class="column">
+                <div class="card">
+                    <i class="fa" style="font-size:18px;"> <img
+                            src="https://media-exp1.licdn.com/dms/image/C4D03AQGBwGeRX7nnBg/profile-displayphoto-shrink_400_400/0/1587440357221?e=1661385600&v=beta&t=JfjNTs3bCsA3kus4yAB5Qj957QVUrovkMS-U6sYm1XQ"></img>
+                    </i>
+                </div>
+                <div class="container">
+                    <h2>Chris Comillas</h2>
+                    <center>
+                        <p> Aero Structures<br style="margin:0">
+                            <a href="mailto:ccomillas@hawk.iit.edu" target="_blank" rel="noopener noreferrer"
+                                class="fa fa-envelope-square"></a>
+                            <a href="https://www.linkedin.com/in/ccomillas" target="_blank" rel="noopener noreferrer"
+                                class="fa fa-linkedin-square"></a>
+                            <a href="https://github.com/aiaa-iit" target="_blank" rel="noopener noreferrer"
+                                class="fa fa-github-square"></a>
+
+                        </p>
+                    </center>
+                </div>
+
+            </div>
+            <div class="column">
+                <div class="card">
+                    <i class="fa" style="font-size:18px;"> <img
+                            src="https://media-exp1.licdn.com/dms/image/C5603AQFKXyoQHhrrwA/profile-displayphoto-shrink_400_400/0/1612758166070?e=1661385600&v=beta&t=nxeZc94UjxzpG9Vv7T1OZ7e2Kyb1eB3HEcJ_EOEw8A8"></img>
+                    </i>
+                </div>
+                <div class="container">
+                    <h2>Claire Powell</h2>
+                    <center>
+                        <p>Project Lead<br style="margin:0">
+                            <a href="mailto:cpowell@hawk.iit.edu" target="_blank" rel="noopener noreferrer"
+                                class="fa fa-envelope-square"></a>
+                            <a href="https://www.linkedin.com/in/claire-powell-5373081a2" target="_blank"
+                                rel="noopener noreferrer" class="fa fa-linkedin-square"></a>
+                            <a href="https://github.com/aiaa-iit" target="_blank" rel="noopener noreferrer"
+                                class="fa fa-github-square"></a>
+                        </p>
+                    </center>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <i class="fa" style="font-size:18px;"> <img
+                            src="https://media-exp1.licdn.com/dms/image/C4E03AQHRR4uCZ8pwdg/profile-displayphoto-shrink_400_400/0/1638577110885?e=1661385600&v=beta&t=_RqiXER6IuNR_eLeOrwkHCaBqHs88khJY46FAE1JuOY"></img>
+                    </i>
+                </div>
+                <div class="container">
+                    <h2>Satyajeet Khopkar</h2>
+                    <center>
+                        <p>Fluid Mechanics<br style="margin:0">
+                            <a href="mailto:skhopkar@hawk.iit.edu" target="_blank" rel="noopener noreferrer"
+                                class="fa fa-envelope-square"></a>
+                            <a href="https://www.linkedin.com/in/satyajeet-khopkar" target="_blank"
+                                rel="noopener noreferrer" class="fa fa-linkedin-square"></a>
+                            <a href="https://github.com/aiaa-iit" target="_blank" rel="noopener noreferrer"
+                                class="fa fa-github-square"></a>
+                        </p>
+                    </center>
+                </div>
+            </div>
+
+    </center>
+    </center>
+</body>
+
+</html>

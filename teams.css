@@ -1,0 +1,135 @@
+
+        /* Whole html box designing */
+        html {
+            box-sizing: border-box;
+        }
+
+        #image {
+            display: inline;
+        }
+
+
+        /* Body width fixing */
+        body {
+            max-width: 100%
+        }
+
+        /* Box sizing depending on parent */
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+            color: white;
+
+        }
+
+        h2 {
+            color: white;
+        }
+
+        /* Styling column */
+        .column {
+            float: left;
+            width: 25%;
+            margin-bottom: 10px;
+            padding: 5px 5px;
+        }
+
+
+        /* Column width change depends on screen size */
+        @media screen and (max-width: 670px) {
+            .column {
+                width: 100%;
+                text-align: none;
+            }
+        }
+
+        /* Card designing */
+        .card {
+            /* background-color: none */
+            border: 0px solid black;
+        }
+
+        .container {
+            padding: 0 2px;
+        }
+
+        /* Icon styling */
+        .fa {
+            margin: 10px;
+            font-size: 68px;
+
+        }
+
+        .fa:hover {
+            transform: rotateY(180deg);
+            transition: transform 0.8s;
+        }
+
+        .container::after,
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        /* Margining first member of team */
+        #gfg {
+            float: none;
+            margin: auto;
+        }
+
+        /* Individual Social Media Icons */
+
+        .fa-envelope-square {
+
+            color: #ada7a1;
+            font-size: 30px;
+            /* display: inline-block;
+            border-radius: 50%;
+            box-shadow: 0 0 2px #ada7a1;
+            padding: 0.5em 0.5em; */
+        }
+
+        .fa-envelope-square:hover {
+            transform: scale(1.3);
+        }
+
+        .fa-linkedin-square {
+            color: #ada7a1;
+            font-size: 30px;
+        }
+
+        .fa-linkedin-square:hover {
+            transform: scale(1.3);
+        }
+
+        .fa-github-square {
+            color: #ada7a1;
+            font-size: 30px;
+        }
+
+        .fa-github-square:hover {
+            transform: scale(1.3);
+        }
+
+        .fa-external-link-square {
+            color: #ada7a1;
+            font-size: 30px;
+
+        }
+
+        .fa-external-link-square:hover {
+            transform: scale(1.3);
+        }
